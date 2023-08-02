@@ -18,7 +18,7 @@ export default function rehypeDesc(): IDumiUnifiedTransformer {
         const text = toString(node).trim();
 
         if (text) {
-          vFile.data.description = text.replace(/\r?\n|\r/g, '');
+          vFile.data.description = vFile.data.description || text.replace(/\r?\n|\r/g, '');
           return visit.EXIT;
         }
       }
