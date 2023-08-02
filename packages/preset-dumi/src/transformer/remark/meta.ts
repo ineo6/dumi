@@ -94,6 +94,7 @@ export default function meta(): IDumiUnifiedTransformer {
         args: {
           identifier: vFile.data.componentName,
           name: vFile.data.title,
+          description: vFile.data.description,
           keywords: vFile.data.keywords,
           uuid: vFile.data.uuid,
           // use to parse props from component file

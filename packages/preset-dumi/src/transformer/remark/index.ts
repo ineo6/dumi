@@ -27,6 +27,7 @@ import jsxify from './jsxify';
 import isolation from './isolation';
 import domWarn from './domWarn';
 import sourceCode from './sourceCode';
+import rehypeDesc from './rehypeDesc';
 
 const log = createDebug('dumi:remark');
 
@@ -47,6 +48,7 @@ interface IDumiVFileData {
    * page title
    */
   title?: string;
+  description?: string;
   /**
    * component keywords
    */
@@ -158,6 +160,7 @@ export default (source: string, fileAbsPath: string, type: 'jsx' | 'html', maste
     .use(debug('previewer'))
     .use(isolation)
     .use(debug('isolation'))
+    .use(rehypeDesc)
     .data('masterKey', masterKey)
     .data('fileAbsPath', fileAbsPath)
     .data('outputType', type);
